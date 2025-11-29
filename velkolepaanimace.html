@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            body {
+                background-color: green;
+            }
+            .mic {
+                height: 100px;
+                width: 100px;
+                position: absolute;
+                left: 44%;
+                top: 22%;
+                animation: kop1 10s linear forwards;
+            }
+            .mic:hover {
+                background-color: blue;
+                transition: background-color 5s, height 1s ease;
+            }
+
+            .hrac1 {
+                border-radius: 100%;
+                background-color: red;
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                right: 50%;
+                top: 5%;
+                animation: beh1 4.5s linear 2 alternate;
+            }
+
+            .hrac2 {
+                border-radius: 100%;
+                background-color: blue;
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                bottom: 5%;
+                right: 50%;
+                animation: beh2 4.5s linear 2 alternate;
+            }
+
+            .fanousek{
+                                border-radius: 100%;
+                background-color: rgb(255, 0, 255);
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                bottom: 45%;
+                left: 10%;
+            }
+            .zvetseni {
+                animation: zvetseni 5s linear forwards;
+            }
+
+            @keyframes kop1 {
+                0% {
+                }
+                33% {
+                    translate: 450px 450px;
+                }
+                66% {
+                    translate: 450px 0px;
+                }
+                100% {
+                    translate: 0px 450px;
+                }
+            }
+
+            @keyframes beh1 {
+                0% {
+                }
+                50% {
+                    translate: 450px 0px;
+                }
+                100% {
+                    translate: 450px 0px;
+                }
+            }
+
+            @keyframes beh2 {
+                0% {
+                }
+                50% {
+                    translate: 450px 0px;
+                }
+                100% {
+                    translate: 450px 0px;
+                }
+            }
+
+            @keyframes zvetseni {
+                from {
+                    scale: 100%;
+                }
+                to {
+                    scale: 200%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <img class="mic" src="mic-removebg-preview.png" alt="mic" id="mic" />
+        <div class="hrac1"></div>
+        <div class="hrac2"></div>
+        <div class="zvetseni"></div>
+        <div class="fanousek"></div>
+
+        <input class="button" type="button" value="click" />
+
+        <script>
+            const tlacitko = document.querySelector(".button");
+            const fanousek = document.querySelector(".fanousek");
+            tlacitko.addEventListener("click", function () {
+                fanousek.classList.toggle("zvetseni");
+            });
+        </script>
+    </body>
+</html>
